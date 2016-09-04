@@ -1,0 +1,10 @@
+version: '2'
+services:
+  quagga:
+    build:
+      context: .
+      args:
+        user: iwaseyusuke
+    image: iwaseyusuke/quagga-alpine
+    tty: true
+    privileged: true
