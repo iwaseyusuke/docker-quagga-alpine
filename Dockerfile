@@ -8,7 +8,7 @@ ARG user=iwaseyusuke
 USER root
 WORKDIR /root
 
-COPY ENTRYPOINT.sh /root/ENTRYPOINT.sh
+COPY ENTRYPOINT.sh /ENTRYPOINT.sh
 
 RUN apk add --no-cache quagga \
  && touch /etc/quagga/zebra.conf \
@@ -19,6 +19,6 @@ RUN apk add --no-cache quagga \
  && touch /etc/quagga/bgpd.conf \
  && touch /etc/quagga/isisd.conf \
  && touch /etc/quagga/vtysh.conf \
- && chmod +x /root/ENTRYPOINT.sh
+ && chmod +x /ENTRYPOINT.sh
 
-ENTRYPOINT ["/root/ENTRYPOINT.sh"]
+ENTRYPOINT ["/ENTRYPOINT.sh"]
